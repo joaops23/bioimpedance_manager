@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  web: # Serviço responsável por subir um servidor nginx para receber requisições (sozinho não executa scripts PHP)
+    image: nginx:latest 
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./www:/www
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    links:
+      - php
+
+  php:
+    container_name: php-fpm
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes: 
+      - ./www:/www
+    links: 
+     - db
+
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1045
+      MYSQL_DATABASE: bioimpedance
+
+volumes:
+  www:
+  site.conf:
