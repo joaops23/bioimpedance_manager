@@ -1,0 +1,13 @@
+{% include "components/head.html" %}
+
+<div class="login-container">
+    <form action="/account/login" method="post">
+        <label for="email" class="labelLogin">Login</label>
+        <input type="text" name="email" id="emailLogin" class="inputLogin"/>
+
+        <label for="pass" class="labelLogin">Login</label>
+        <input type="password" name="pass" id="passLogin" class="inputLogin"/>
+
+        <button class="btn btn-success">Login</button>
+    </form>
+</div>
