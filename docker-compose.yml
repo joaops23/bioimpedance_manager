@@ -6,9 +6,9 @@ services:
     container_name: nginx
     restart: always
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
-      - ./www:/www
+      - ./:/app
       - ./site.conf:/etc/nginx/conf.d/site.conf
     links:
       - php
@@ -21,7 +21,7 @@ services:
     ports:
       - "9000:9000"
     volumes: 
-      - ./www:/www
+      - ./:/app
     links: 
      - db
 
@@ -37,5 +37,5 @@ services:
       MYSQL_DATABASE: bioimpedance
 
 volumes:
-  www:
+  app:
   site.conf:
