@@ -1,13 +1,26 @@
 {% include "components/head.html" %}
 
+<script type="text/javascript" src="/js/login.js"></script>
 <div class="login-container">
-    <form action="/account/login" method="post">
-        <label for="email" class="labelLogin">Login</label>
-        <input type="text" name="email" id="emailLogin" class="inputLogin"/>
+    <form action="#">
+        <div class="form-control m-3 form-login">
 
-        <label for="pass" class="labelLogin">Login</label>
-        <input type="password" name="pass" id="passLogin" class="inputLogin"/>
+            <div class="form-floating m-4 col-8 login-container-item">
+                <input type="email" name="email" id="emailLogin" class="form-control inputLogin mb-3" placeholder="name@example.com"/>
+                <label for="emailLogin" class="labelLogin ">Login</label>
+            </div>
+            
+            <div class="form-floating m-3 col-8 login-container-item">
+                <input type="password" name="pass" id="passLogin" class="inputLogin form-control" placeholder="123456"/>
+                <label for="passLogin" class="labelLogin">Senha</label>
+            </div>
+            <div class="login-container-item">
+                <small class="text">Esqueceu a senha? <a href="#">Recuperar senha</a></small>
+            </div>
 
-        <button class="btn btn-success">Login</button>
+            <div class="login-container-item">
+                <button type="button" onclick="submitLogin()" class="btn btn-outline-success m-3">Login</button>
+            </div>
+        </div>
     </form>
 </div>
