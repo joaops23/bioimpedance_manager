@@ -11,6 +11,12 @@ $twig = Twig::create(__DIR__ . "/../app/views/", ['cache' =>  false]);
 //criando middleware para templates
 $app->add(TwigMiddleware::create($app, $twig));
 
+require_once __DIR__ . "/../app/middleware/Verify.php";
+
+$app->add($loggedMiddleware);
+
+$app->addRoutingMiddleware();
+
 require_once __DIR__ . "/../app/routers/index.php";
 
 $app->run();

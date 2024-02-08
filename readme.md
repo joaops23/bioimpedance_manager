@@ -49,3 +49,7 @@ POO(herança de classes controladoras, modelos, repositories etc)
 - Cadastro de clientes
 - Cadastro de empresas
 - Relatórios
+
+### Configurações
+
+- SESSION['authorization'] -> chave jwt adquirida e registrada na sessão através do login.
