@@ -53,3 +53,14 @@ POO(herança de classes controladoras, modelos, repositories etc)
 ### Configurações
 
 - SESSION['authorization'] -> chave jwt adquirida e registrada na sessão através do login.
+
+### Passo a passo
+
+- Baixar o projeto
+- Importar as bibliotecas com PHP Composer
+- Iniciar o projeto através do docker: 
+~~~ sh
+$ docker compose up
+~~~
+- acessar o container do serviço de banco de dados
+- dentro do container, criar o banco de dados a partir do arquivo "database.sql"
