@@ -64,3 +64,14 @@ $ docker compose up
 ~~~
 - acessar o container do serviço de banco de dados
 - dentro do container, criar o banco de dados a partir do arquivo "database.sql"
+
+
+## Tasks
+
+- criar tela de cadastro de novo usuário
+    O novo usuário não pode ter acesso a nada sem que um usuário administrador dê privilégio a ele, ele inicia com acesso básico
+
+- Construir painel padrão da aplicação(quando logado) para seguir nas demais telas da aplicação, contendo o menu, links e estilização padrão
+
+- criar telas de clientes e empresas, funções, unidades e cargos
+- Criar exportações/relatórios.
