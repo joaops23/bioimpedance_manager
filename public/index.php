@@ -12,10 +12,12 @@ define("CONFIGS", $configs);
 
 //Carrega configurações do template engine
 require_once _APP . "/config/twigConfig.php";
-require_once _APP . "middleware/Verify.php";
 
-$app->add($loggedMiddleware);
-$app->addRoutingMiddleware();
+//ocultando o middleware para facilitar o desenvolvimento, está sujeito a alteração para voltar a funcionar
+//require_once _APP . "middleware/Verify.php";
+
+//$app->add($loggedMiddleware);
+//$app->addRoutingMiddleware();
 
 # Configurando Conexão com base de dados
 require_once _APP . "routers/index.php";

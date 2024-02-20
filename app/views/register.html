@@ -1,0 +1,41 @@
+{% include "components/head.html" %}
+
+<script type="text/javascript" src="/js/register.js"></script>
+<div class="login-container">
+    <form action="#" name="formRegister">
+        <div class="form-control m-3 form-login">
+
+            <div class="form-floating m-4 col-8 login-container-item">
+                <input type="email" name="email" id="email" class="form-control inputLogin mb-3" placeholder="name@example.com" required/>
+                <label for="email" class="labelLogin">email</label>
+            </div>
+            
+            <div class="form-floating m-3 col-8 login-container-item">
+                <input type="text" name="nameUser" id="nameUser" class="inputLogin form-control" placeholder="Joãozinho" required/>
+                <label for="nameUser" class="labelLogin">Nome</label>
+            </div>
+
+            <div class="form-floating m-3 col-8 login-container-item">
+                <input type="text" name="sap" id="sap" class="inputLogin form-control" placeholder="1234"/>
+                <label for="sap" class="labelLogin">SAP</label>
+            </div>
+
+            <div class="form-floating m-3 col-8 login-container-item">
+                <input type="password" name="pass" id="password" 
+                class="inputLogin form-control" 
+                placeholder="123456"
+                pattern="[0-9a-fA-F]{4,8}"
+                minlength="11"
+                maxlength="20"
+                required
+                title="A senha deve conter caracteres maiúsculos, minusculos números e caracteres especiais. Mínimo de 8 caracteres"
+                />
+                <label for="password" class="labelLogin">Senha</label>
+            </div>
+
+            <div class="login-container-item">
+                <button type="button" onclick="submitRegister()" class="btn btn-outline-success m-3">Registrar</button>
+            </div>
+        </div>
+    </form>
+</div>

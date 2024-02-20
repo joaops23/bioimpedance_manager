@@ -13,7 +13,7 @@ $loggedMiddleware = function ($request, $handler): ResponseInterface {
     $routeName= $route->getName();
 
     //Rotas púlicas da api
-    $publicRoutesArray = array("Login");
+    $publicRoutesArray = array("Login", "registerLogin", 'register');
 
     if((empty($_SESSION['authorization']) && (!in_array($routeName, $publicRoutesArray)))){ // Se o usuário não estiver conectado e não chamar nenhuma rota pública
         

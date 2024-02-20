@@ -17,5 +17,4 @@ abstract class DefaultModel extends \PDO
         $this->conn = new \PDO($driver, CONFIGS['DB_USER'], CONFIGS['DB_PASS']);
     }
 
-
 }

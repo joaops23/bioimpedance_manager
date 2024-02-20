@@ -2,13 +2,16 @@
 
 namespace App\Router;
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Views\Twig;
+use Slim\Routing\RouteCollectorProxy;
+use App\Controllers\AccountController;
 
-$app->get("/account/login", function(Request $request, Response $response, $args){
-    $view = Twig::fromRequest($request);
-    return $view->render($response, "login.html", ["title" => "Login"]);
-})->setName("Login");
+$app->group("/account", function(RouteCollectorProxy $group) {
 
+    $group->get("/login", [AccountController::class, "login"])->setName("Login");
+
+    $group->get("/register", [AccountController::class, "register"])->setName("register");
+
+    $group->post('/registerLogin', [AccountController::class, 'verifLogin'])->setName("registerLogin");
+
+});
 ?>
